@@ -4,5 +4,7 @@
     <string name="app_name">Octopus</string>
     <string name="hello_world">Hello biatch!</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="button_play">Play</string>
+    <string name="button_exit">Exit</string>
 
 </resources>
