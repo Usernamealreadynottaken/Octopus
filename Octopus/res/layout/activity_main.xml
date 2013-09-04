@@ -12,9 +12,10 @@
 
     <Button 
         android:id="@+id/button_play"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_play"
+        android:layout_marginTop="20dip"
         android:layout_centerHorizontal="true"
         android:onClick="play"
         android:background="@drawable/custom_button"
@@ -22,11 +23,12 @@
     
     <Button 
         android:id="@+id/button_exit"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_exit"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/button_play"
+        android:layout_marginTop="20dip"
         android:onClick="exit"
         android:background="@drawable/custom_button"
         />
