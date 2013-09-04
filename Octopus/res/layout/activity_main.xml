@@ -17,7 +17,7 @@
         android:text="@string/button_play"
         android:layout_centerHorizontal="true"
         android:onClick="play"
-        android:background="@android:color/transparent"
+        android:background="@drawable/custom_button"
         />
     
     <Button 
@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/button_play"
         android:onClick="exit"
-        android:background="@android:color/transparent"
+        android:background="@drawable/custom_button"
         />
 
 </RelativeLayout>
