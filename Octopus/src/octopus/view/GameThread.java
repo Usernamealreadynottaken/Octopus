@@ -29,7 +29,22 @@ public class GameThread extends Thread {
 		Canvas c = null;
 		
 		while(running){
-			
+			c = null;
+			try {
+				c = surfaceHolder.lockCanvas();
+				synchronized (surfaceHolder) {
+					if (c != null) {
+						canvas.draw(c);
+					}
+				}
+				sleep(SLEEP_TIME);
+			} catch (InterruptedException e) {
+				
+			} finally {
+				if (c != null) {
+					surfaceHolder.unlockCanvasAndPost(c);
+				}
+			}
 		}
 	}
 }
