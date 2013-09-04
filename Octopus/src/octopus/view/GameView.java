@@ -7,7 +7,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -32,12 +31,7 @@ public class GameView extends SurfaceView implements OnTouchListener, SurfaceHol
 	
 	public void loadBackground() {
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.cue_table);
-		float newWidth = (float)bitmap.getWidth()/screenWidth;
-		float newHeight = (float)bitmap.getHeight()/screenHeight;
-
-		Log.w("!!!!!!!!!!!!", "widht: " + screenWidth);
-		Log.w("!!!!!!!!!!!!", "height: " + screenHeight);
-		cueTable = Bitmap.createScaledBitmap(bitmap, (int)newWidth, (int)newHeight, true);
+		cueTable = Bitmap.createScaledBitmap(bitmap, (int)screenWidth, (int)screenHeight, true);
 	}
 	
 	public void startGame() {
