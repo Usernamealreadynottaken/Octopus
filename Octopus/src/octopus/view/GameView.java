@@ -9,9 +9,12 @@ import android.view.View.OnTouchListener;
 
 public class GameView extends SurfaceView implements OnTouchListener, SurfaceHolder.Callback {
 
+	private GameThread thread;
+	
 	public GameView(Context context) {
 		super(context);
 		getHolder().addCallback(this);
+		
 		
 	}
 
