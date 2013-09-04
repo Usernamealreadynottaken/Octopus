@@ -1,6 +1,7 @@
 package octopus.menu;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.app.Activity;
@@ -13,6 +14,15 @@ public class MainActivity extends Activity {
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+	}
+	
+	public void play(View view) {
+		
+	}
+	
+	public void exit(View view) {
+		finish();
+		System.exit(0);
 	}
 
 }
