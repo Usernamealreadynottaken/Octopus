@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -19,16 +20,24 @@ public class GameView extends SurfaceView implements OnTouchListener, SurfaceHol
 	private Bitmap cueTable = null;
 	private Paint paint;
 	
+	private float screenWidth;
+	private float screenHeight;
+	
 	public GameView(Context context) {
 		super(context);
 		getHolder().addCallback(this);
 		paint = new Paint();
 		paint.setColor(Color.RED);
+	}
+	
+	public void loadBackground() {
 		Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.cue_table);
-		float scale = (float)bitmap.getHeight()/(float)getHeight();
-		int newWidth = Math.round(bitmap.getWidth()/scale);
-		int newHeight = Math.round(bitmap.getHeight()/scale);
-		cueTable = Bitmap.createScaledBitmap(bitmap, newWidth, newHeight, true);
+		float newWidth = (float)bitmap.getWidth()/screenWidth;
+		float newHeight = (float)bitmap.getHeight()/screenHeight;
+
+		Log.w("!!!!!!!!!!!!", "widht: " + screenWidth);
+		Log.w("!!!!!!!!!!!!", "height: " + screenHeight);
+		cueTable = Bitmap.createScaledBitmap(bitmap, (int)newWidth, (int)newHeight, true);
 	}
 	
 	public void startGame() {
@@ -75,6 +84,22 @@ public class GameView extends SurfaceView implements OnTouchListener, SurfaceHol
 	public boolean onTouch(View arg0, MotionEvent arg1) {
 		
 		return true;
+	}
+
+	public float getScreenWidth() {
+		return screenWidth;
+	}
+
+	public void setScreenWidth(float screenWidth) {
+		this.screenWidth = screenWidth;
+	}
+
+	public float getScreenHeight() {
+		return screenHeight;
+	}
+
+	public void setScreenHeight(float screenHeight) {
+		this.screenHeight = screenHeight;
 	}
 	
 	
